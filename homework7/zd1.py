@@ -35,7 +35,16 @@ def print_matrix(my_list):
         for val in row:
             print(val , end=" ")
         print()
-
-              
+            
 matr = print_operation_table(fun_proiz,kol_rows,kol_columns)  
 print_matrix(matr)
+
+# 2 вариант
+
+def print_operation_table(operation, num_rows=6, num_columns=7):
+    matrix = [[operation(j, i) for j in range(1, num_columns + 1)] for i in range(1, num_rows + 1)]
+    for row in matrix:
+        print(*row, '\n')
+
+
+print_operation_table(lambda x, y: x*y)
